@@ -11,6 +11,14 @@
 |
 */
 
+// Home Page
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/products', 'ItemsController@index');
+Route::get('/about', function() {
+    return view('about');
+});
+
+Route::resource('items', 'ItemsController');
